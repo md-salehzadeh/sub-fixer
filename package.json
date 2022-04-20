@@ -1,0 +1,60 @@
+{
+	"name": "SubFixer",
+	"version": "1.0.0",
+	"description": "subtitle fix tools package",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"postinstall": "install-app-deps",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder"
+	},
+	"repository": "https://github.com/md-salehzadeh/SubFixer",
+	"keywords": [
+		"subtitles",
+		"tools",
+		"Electron",
+		"nodejs"
+	],
+	"author": "Mohammad Salehzadeh <md.salehzadeh@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"electron": "^8.0.3",
+		"electron-builder": "^22.4.0",
+		"electron-packager": "^14.2.1"
+	},
+	"dependencies": {
+		"archiver": "^3.1.1",
+		"chardet": "^0.8.0",
+		"electron-is-dev": "^1.1.0",
+		"iconv-lite": "^0.5.1",
+		"jquery": "^3.4.1"
+	},
+	"build": {
+		"appId": "com.subfixer.app",
+		"dmg": {
+			"contents": [
+				{
+					"x": 110,
+					"y": 150
+				},
+				{
+					"x": 240,
+					"y": 150,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			]
+		},
+		"win": {
+			"target": "NSIS",
+			"icon": "build/icon.ico"
+		}
+	}
+}

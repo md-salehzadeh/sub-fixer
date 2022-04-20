@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+	<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>SubFixer</title>
+
+	<link rel="stylesheet" href="assets/components/foundation-6.5.1/css/foundation.css">
+	<link rel="stylesheet" href="assets/components/foundation-6.5.1/css/app.css">
+
+	<link href="assets/fonts/fontawesome-pro-5.2.0/css/all.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/main.css.map">
+</head>
+
+<body>
+	<div class="ms-box" id="main-wrapper">
+		<div class="ms-box-inner">
+			<div class="ms-box-header">
+				<img src="assets/images/icon.svg" alt="logo" id="logo">
+				<span id="app-name">SubFixer</span>
+				<div class="btns-wrapper">
+					<button id="close-btn"><i class="far fa-times"></i></button>
+					<button id="min-btn"><i class="far fa-minus"></i></button>
+				</div>
+			</div>
+
+			<div class="ms-box-content">
+				<form id="form" method="post" enctype="multipart/form-data">
+					<input name="subtitles[]" type="file" class="custom-file-input" multiple accept=".srt">
+					<input name="name-pattern" type="text" class="input-style" placeholder="Name pattern (E.g. filename - S01E(\d*))" autocomplete="off">
+					<input name="name" type="text" class="input-style" placeholder="Name (E.g. new filename - S01E{#})" autocomplete="off">
+					<input type="submit" value="Fix now" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="./assets/components/jquery/jquery-2.2.4.min.js"></script>
+
+	<!-- You can also require other files to run in this process -->
+	<script src="./renderer.js"></script>
+</body>
+
+</html>
